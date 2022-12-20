@@ -46,6 +46,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'baton',
+    'account',
     #'account',
     #'courses',
     #'courses_exams',
@@ -85,6 +86,8 @@ INSTALLED_APPS = [
     'streams',
     'widget_tweaks',
    #SMARTQUAIL-BUSINESS-CONSULTING
+   'images',
+   'actions',
     #'shop',
     #'coupons',
     #'cart',
@@ -166,11 +169,12 @@ REDIS_DB =os.environ.get('REDIS_DB')
 #LOGINGS REDIRECT
 
 #LOGIN_REDIRECT_URL = 'accounts:dashboard'
+LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
-from django.urls import reverse_lazy
-LOGIN_REDIRECT_URL = reverse_lazy('course_list')
+#from django.urls import reverse_lazy
+#LOGIN_REDIRECT_URL = reverse_lazy('course_list')
 
 
 
@@ -205,10 +209,10 @@ CELERY_TASK_SERIALIZER = 'json'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    #'account.authentication.EmailAuthBackend',
-    #'social_core.backends.facebook.FacebookOAuth2',
-    #'social_core.backends.twitter.TwitterOAuth',
-    #'social_core.backends.google.GoogleOAuth2',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
 ]
 
 # social auth settings

@@ -20,6 +20,9 @@ urlpatterns = [
     #path('Contracts/', include('contracts.urls', namespace='contracts')),
     #path('services/', include('services.urls', namespace="services")),
     path('qr-code/', include(qr_code_urls, namespace="qr_code")),
+    path('account/', include('account.urls')),
+    path('social-auth/', include('social_django.urls', namespace='social')),
+    path('images/', include('images.urls', namespace='images')),
     #E-commerce-configs
     #path('coupons/', include('coupons.urls', namespace='coupons')),
     #path('cart/', include('cart.urls', namespace='cart')),
